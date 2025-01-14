@@ -30,21 +30,6 @@ static PyObject *_pio_counter_release_statemachine(PyObject *self, PyObject *arg
 }
 
 
-static PyObject *_pio_counter_initialise(PyObject *self, PyObject *args)
-{
-    // int gpio_pin, clock_rate;
-
-    // if(!PyArg_ParseTuple(args, "ii", &gpio_pin, &clock_rate))
-    // {
-    //     printf("failed to parse args\r\n");
-    //     return Py_BuildValue("");
-    // }
-
-    // initialise(gpio_pin, clock_rate);
-
-    return Py_BuildValue("");
-}
-
 static PyObject *_pio_counter_capture(PyObject *self, PyObject *args)
 {
     Py_buffer buffer;
@@ -124,7 +109,6 @@ static PyObject *_pio_counter_rx_fifo_level(PyObject *self, PyObject *args)
 static PyMethodDef module_methods[] = {
     {"_claim_statemachine", _pio_counter_claim_statemachine, METH_VARARGS, vector_sub_docstring},
     {"_release_statemachine", _pio_counter_release_statemachine, METH_VARARGS, vector_sub_docstring},
-    {"_initialise", _pio_counter_initialise, METH_VARARGS, vector_sub_docstring},
     {"_capture", _pio_counter_capture, METH_VARARGS, vector_sub_docstring},
     {"_load_program", _pio_counter_load_program, METH_VARARGS, vector_sub_docstring},
     {"_start_program", _pio_counter_start_program, METH_VARARGS, vector_sub_docstring},

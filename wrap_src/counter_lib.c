@@ -59,11 +59,6 @@ void release_statemachine(int sm)
     pio_sm_unclaim(pio, sm);
 }
 
-int initialise()
-{
-    return 0;
-}
-
 int capture(int sm, uint32_t *bigbuf, uint32_t data_size)
 {
     PIO pio = pio0;

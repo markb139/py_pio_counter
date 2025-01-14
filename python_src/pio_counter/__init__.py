@@ -1,4 +1,7 @@
-from ._pio_counter import _claim_statemachine, _release_statemachine, _initialise, _capture, _load_program, _start_program, _stop_program, _rx_fifo_level
+from ._pio_counter import (
+    _claim_statemachine, _release_statemachine, 
+     _capture, _load_program, _start_program, _stop_program, _rx_fifo_level
+)
 
 
 class PIOCounter:
@@ -16,8 +19,7 @@ class PIOCounter:
     def initialise(self, gpio_pin, clock_rate):
         self.gpio_pin = gpio_pin
         self.clock_rate = clock_rate
-        return _initialise()
-
+     
     def capture(self, buffer):
         return _capture(self.sm, buffer)
     
