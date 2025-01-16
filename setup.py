@@ -8,7 +8,7 @@ from setuptools import setup, Extension
 file_dir = Path(__file__).parent.absolute().relative_to(Path().absolute())
 
 piolib_root = Path("../utils/piolib")
-piolib_headers = piolib_root.joinpath("include")
+piolib_headers = Path("/usr/local/include")
 piolib_lib = Path("/usr/local/lib")
 
 ext_modules = [
