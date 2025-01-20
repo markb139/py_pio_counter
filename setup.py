@@ -20,7 +20,7 @@ ext_modules = [
         language="c",
         extra_compile_args=[f"-I{piolib_headers}"],
         extra_link_args=[],
-        extra_objects=[piolib_lib.joinpath("libpio_lib.so")],
+        extra_objects=[file_dir.joinpath("python_src", "pio_counter", "libpio_lib.so")],
         include_dirs=[os.fspath(piolib_headers)],
     )
 ]
