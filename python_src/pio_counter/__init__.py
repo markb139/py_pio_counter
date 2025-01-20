@@ -1,3 +1,8 @@
+import os
+from ctypes import *
+lib_path = os.path.join(os.path.split(__file__)[0], "libpio_lib.so")
+lib1 = cdll.LoadLibrary(lib_path)
+
 from ._pio_counter import (
     _claim_statemachine, _release_statemachine, 
     _capture, _load_program, _start_program, _stop_program, _rx_fifo_level
