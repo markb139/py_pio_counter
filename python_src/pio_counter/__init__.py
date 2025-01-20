@@ -1,8 +1,7 @@
 from ._pio_counter import (
     _claim_statemachine, _release_statemachine, 
-     _capture, _load_program, _start_program, _stop_program, _rx_fifo_level
+    _capture, _load_program, _start_program, _stop_program, _rx_fifo_level
 )
-
 
 class PIOCounter:
     gpio_pin = 0

@@ -2,8 +2,7 @@ from __future__ import annotations
 
 import os
 from pathlib import Path
-
-from setuptools import setup, Extension
+from setuptools import setup, Extension, find_packages
 
 file_dir = Path(__file__).parent.absolute().relative_to(Path().absolute())
 
@@ -25,7 +24,10 @@ ext_modules = [
         include_dirs=[os.fspath(piolib_headers)],
     )
 ]
-
 setup(
+    packages=find_packages(where="python_src"),
+    package_dir={"": "python_src"},
+    package_data={"pio_counter": ["*.so"]},
+    include_package_data=True,
     ext_modules=ext_modules,
 )
