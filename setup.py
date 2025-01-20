@@ -6,9 +6,7 @@ from setuptools import setup, Extension, find_packages
 
 file_dir = Path(__file__).parent.absolute().relative_to(Path().absolute())
 
-piolib_root = Path("../utils/piolib")
-piolib_headers = Path("/usr/local/include")
-piolib_lib = Path("/usr/local/lib")
+piolib_headers = Path("./include")
 
 ext_modules = [
     Extension(
