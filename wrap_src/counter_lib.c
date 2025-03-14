@@ -12,16 +12,17 @@
 static inline void counter_program_init(PIO pio, uint sm, uint offset, uint pin, float div) {
     pio_sm_config c = counter_program_get_default_config(offset);
 
-    // Map the state machine's OUT pin group to one pin, namely the `pin`
-    // parameter to this function.
 
     // Set this pin's GPIO function (connect PIO to the pad)
     pio_gpio_init(pio, pin);
+    
     // Set the pin direction to output at the PIO
-
     sm_config_set_in_pins(&c, pin);
     sm_config_set_jmp_pin(&c, pin);
     sm_config_set_clkdiv(&c, div);
+
+    // set pin pull up
+    gpio_set_pulls(pin, true, false);
 
     sm_config_set_fifo_join(&c, PIO_FIFO_JOIN_RX);
     pio_sm_clear_fifos(pio, sm);
